@@ -1,22 +1,24 @@
 import { Bell } from 'lucide-react'
-import { Button } from '../ui/button'
+
 import { SidebarTrigger } from '../ui/sidebar'
 
 const Header = () => {
   return (
     <header className={`relative`}>
       <SidebarTrigger className={`absolute left-0 top-2.5 p-4`} />
-      <div className="w-full border-b-2 px-6 border-b-black/40 py-2 shadow-xl shadow-black">
-        <div className={`ml-auto flex w-full items-center justify-end gap-2`}>
-          <Button className={`h-6 w-6 !bg-transparent !p-0 text-white`}>
-            <Bell className={`!h-full !w-full cursor-pointer text-white`} size={24} />
-          </Button>
-          <span className={`rounded-md border border-custom px-3 py-2`}>User Name</span>
-          <Button
-            className={`flex w-8 cursor-pointer items-center justify-center rounded-full !bg-custom text-[px] lg:w-10 lg:text-xl`}
+      <div className="w-full border-b-2 border-b-black/40 px-6 py-2 shadow-xl shadow-black">
+        <div className={`ml-auto flex w-full items-center justify-end gap-4`}>
+          <button className={`text-white`} type="button" aria-label="Notifications">
+            <Bell className={``} size={24} />
+          </button>
+          <span className={`border-custom-blue rounded-md border px-1.5 py-1.5`}>User Name</span>
+          <button
+            className={`bg-custom-blue flex h-10 w-8 cursor-pointer items-center justify-center rounded-full text-background lg:w-10 lg:text-xl`}
+            type="button"
+            aria-label="User Name"
           >
             U
-          </Button>
+          </button>
         </div>
       </div>
     </header>

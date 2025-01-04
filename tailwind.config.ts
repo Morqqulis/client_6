@@ -21,8 +21,8 @@ export default {
     },
     extend: {
       colors: {
-        custom: '#50b6cd',
-
+        'custom-blue': '#50b6cd',
+        'custom-red': '#DA2867',
         background: 'var(--background)',
         foreground: 'var(--foreground)',
         sidebar: {
