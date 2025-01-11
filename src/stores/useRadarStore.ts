@@ -8,6 +8,7 @@ interface IRadarStore {
   selectedGender: 'male' | 'female'
   selectedGenres: Set<string>
   availableGenres: string[]
+  gender: 'male' | 'female'
 
   setPercentage: (percentage: number) => void
   setRange: (percentage: [number, number]) => void
@@ -29,7 +30,8 @@ export const useRadarStore = create<IRadarStore>((set) => ({
   selectedGender: 'male',
   selectedGenres: new Set(),
   availableGenres: [],
-
+  gender: 'male',
+  
   setPercentage: (percentage: number) => set({ percentage }),
   setRange: (range: [number, number]) => set({ range }),
   setMinAge: (minAge: number = 0) => set({ minAge }),
