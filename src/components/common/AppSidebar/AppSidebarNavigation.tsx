@@ -32,7 +32,7 @@ const navigation: INavItem[] = [
   },
   {
     label: 'Trending Tracks',
-    href: '/tracks',
+    href: '/trending-tracks',
     icon: <Hash />,
   },
   {
@@ -56,7 +56,7 @@ const AppSidebarNavigation = () => {
         <li className={`last:border-t last:border-white last:pt-1`} key={item.label}>
           <Link
             href={item.href}
-            className={`hover:text-custom-red flex w-full items-center gap-2 px-4 py-2 duration-300 ${path === item.href ? 'text-custom-blue' : ''}`}
+            className={`flex w-full items-center gap-2 px-4 py-2 duration-300 hover:text-custom-red ${path === item.href ? 'text-custom-blue' : ''}`}
           >
             {item.icon}
             {item.label}

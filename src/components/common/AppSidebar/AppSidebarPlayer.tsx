@@ -44,44 +44,49 @@ const AppSidebarPlayer = () => {
 
   return (
     <div className="flex flex-col items-center text-white">
-      {currentTrack.image && (
-        <Image
-          src={currentTrack.image}
-          className="h-20 w-28 rounded-lg lg:h-28 lg:w-36"
-          alt={currentTrack.title}
-          width={144}
-          height={112}
-        />
-      )}
-      {currentTrack && (
-        <div>
-          <h3 className="py-2 text-center text-[12px] uppercase">{currentTrack.title}</h3>
-          <audio
-            src={currentTrack.url || '#'}
-            className="mx-4 h-4 w-44 lg:h-6 lg:w-40 xl:w-44"
-            controls
-            autoPlay={false}
+      {currentTrack ? (
+        <>
+          <Image
+            src={currentTrack.image}
+            className="h-20 rounded-lg w-28 lg:h-28 lg:w-36"
+            alt={currentTrack.title}
+            width={160}
+            height={176}
+            priority
           />
-        </div>
+
+          <div className={`mb-2`}>
+            <h3 className="py-2 text-center text-[12px] uppercase">{currentTrack.title}</h3>
+            <audio
+              src={currentTrack.url || '#'}
+              className="h-4 mx-4 w-44 lg:h-6 lg:w-40 xl:w-44"
+              controls
+              autoPlay={false}
+            />
+          </div>
+
+          <div className="flex py-0 mt-2 gap-14 lg:py-4">
+            <button
+              className="duration-300 hover:text-custom-blue active:text-custom-red"
+              onClick={playPreviousTrack}
+              type="button"
+              aria-label="Previous track"
+            >
+              <CircleArrowLeft />
+            </button>
+            <button
+              className="duration-300 hover:text-custom-blue active:text-custom-red"
+              onClick={playNextTrack}
+              type="button"
+              aria-label="Next track"
+            >
+              <CircleArrowRight />
+            </button>
+          </div>
+        </>
+      ) : (
+        <div>Track not found</div>
       )}
-      <div className="flex gap-14 py-0 lg:py-4">
-        <button
-          className="hover:text-custom-blue active:text-custom-red duration-300"
-          onClick={playPreviousTrack}
-          type="button"
-          aria-label="Previous track"
-        >
-          <CircleArrowLeft />
-        </button>
-        <button
-          className="hover:text-custom-blue active:text-custom-red duration-300"
-          onClick={playNextTrack}
-          type="button"
-          aria-label="Next track"
-        >
-          <CircleArrowRight />
-        </button>
-      </div>
     </div>
   )
 }

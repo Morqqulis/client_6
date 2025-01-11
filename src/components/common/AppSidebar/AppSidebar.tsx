@@ -6,13 +6,13 @@ import AppSidebarPlayer from './AppSidebarPlayer'
 
 const AppSidebar = () => {
   return (
-    <Sidebar className={`flex h-full max-w-[250px] flex-col justify-between border-black shadow-xl shadow-black`}>
-      <SidebarHeader className='pt-5'>
-        <Link className={`flex w-full flex-col items-center justify-center`} href={'/'}>
-          <Image src={'/logo.svg'} alt={'logo'} width={100} height={100} />
+    <Sidebar className={`flex flex-col justify-between h-full border-black shadow-xl max-w-[250px] shadow-black animate-fade-right animate-delay-300 animate-duration-500`}>
+      <SidebarHeader className="pt-5">
+        <Link className={`flex flex-col justify-center items-center w-full`} href={'/'}>
+          <Image src={'/logo.svg'} alt={'logo'} width={100} height={100} priority />
         </Link>
       </SidebarHeader>
-      <SidebarContent className="my-auto flex grow flex-col items-center justify-center">
+      <SidebarContent className="flex flex-col justify-center items-center my-auto grow">
         <SidebarGroup>
           <AppSidebarNavigation />
         </SidebarGroup>

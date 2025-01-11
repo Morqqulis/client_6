@@ -1,15 +1,16 @@
 'use client'
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import * as z from 'zod'
-import { Loader2, Mail, Lock } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Loader2, Lock, Mail } from 'lucide-react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import * as z from 'zod'
+import { login } from './actions'
 
 // Определение схемы валидации
 const loginSchema = z.object({
@@ -34,10 +35,9 @@ const LoginForm = () => {
 
   const onSubmit = async (data: LoginFormValues) => {
     setLoading(true)
-    // Здесь должна быть логика аутентификации
     console.log(data)
-    // После успешной аутентификации:
-    router.push('/home')
+    await login()
+    router.push('/')
     setLoading(false)
   }
 

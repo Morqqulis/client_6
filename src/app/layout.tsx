@@ -1,14 +1,14 @@
-import { headers } from 'next/headers'
 import AppSidebar from '@/components/common/AppSidebar/AppSidebar'
-import Header from '@/components/common/Header'
+import Header from '@/components/common/Header/Header'
 import { SidebarProvider } from '@/components/ui/sidebar'
 import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
+import { headers } from 'next/headers'
 
 const primaryFont = Poppins({
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
 })
 
@@ -18,9 +18,8 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const headersList = headers()
-  const showSidebar = (await headersList).get('x-show-sidebar') === 'true'
-   console.log(showSidebar)
+  const showSidebar = (await headers()).get('X-Sidebar') === 'true'
+
   return (
     <html lang="en">
       <body className={`dark antialiased ${primaryFont.className}`}>
