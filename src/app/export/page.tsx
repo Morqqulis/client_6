@@ -70,9 +70,9 @@ const ExportPage = () => {
   return (
     <main>
       <section>
-        <div className="justify-center w-8/12 px-4 mx-auto mt-10 text-white border border-gray-500 rounded-md box">
+        <div className="justify-center px-4 mx-auto mt-10 w-8/12 text-white rounded-md border border-gray-500 box">
           <div>
-            <div className="flex items-center gap-2 py-4">
+            <div className="flex gap-2 items-center py-4">
               {/* <FontAwesomeIcon icon={faMusic} className="px-2 text-[#50b6cd]" /> */}
               <Music className={`text-[#50b6cd]`} />
               <h1 className="text-white">AI Music Scheduler</h1>
@@ -119,10 +119,10 @@ const ExportPage = () => {
           </div>
         </div>
         {loading && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-70">
+          <div className="flex fixed inset-0 z-50 justify-center items-center bg-gray-900 bg-opacity-70">
             <div className="absolute flex h-80 w-80 justify-center border-2 border-black bg-[#0c1326] text-center text-white">
               <div className="flex flex-col justify-center h-full">
-                <div className="h-12 mb-4 bg-white rounded-md" style={{ width: `${progress}%` }}></div>
+                <div className="mb-4 h-12 bg-white rounded-md" style={{ width: `${progress}%` }}></div>
                 <p className="text-lg">Importing your library...</p>
               </div>
             </div>

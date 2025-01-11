@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 'use client'
 import SchedulerDashboard from '@/components/custom/SheduleDashboard'
 import UserService from '@/lib/service'
@@ -43,7 +42,7 @@ const PlaylistTable = () => {
 
   return (
     <div className="flex h-screen overflow-hidden bg-[#0c1326]">
-      <div className="flex flex-1 flex-col overflow-y-auto">
+      <div className="flex overflow-y-auto flex-col flex-1">
         <div className="mx-4">
           <SchedulerDashboard />
         </div>
@@ -51,7 +50,7 @@ const PlaylistTable = () => {
           <h2 className="my-4 text-center text-2xl font-bold uppercase text-[#DA2867]">Playlist</h2>
           <hr className="my-2 border border-gray-700" />
           {loading ? (
-            <div className="flex h-32 items-center justify-center">
+            <div className="flex justify-center items-center h-32">
               <ClipLoader color="#DA2867" loading={loading} size={90} />
             </div>
           ) : (
